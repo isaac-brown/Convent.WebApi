@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/isaac-brown/Convent.WebApi/issues"
   },
-  "homepage": "https://github.com/isaac-brown/Convent.WebApi#readme"
+  "homepage": "https://github.com/isaac-brown/Convent.WebApi#readme",
+  "dependencies": {
+    "@commitlint/cli": "^11.0.0"
+  }
 }
