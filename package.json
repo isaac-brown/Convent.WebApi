@@ -19,5 +19,8 @@
   "homepage": "https://github.com/isaac-brown/Convent.WebApi#readme",
   "dependencies": {
     "@commitlint/cli": "^11.0.0"
+  },
+  "devDependencies": {
+    "husky": "^4.3.8"
   }
 }
