@@ -21,6 +21,9 @@ namespace Convent.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddHealthChecks()
+                    .AddCheck<HealthCheck>(name: "Application health");
         }
 
         /// <summary>
@@ -44,6 +47,7 @@ namespace Convent.WebApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/api/health");
             });
         }
     }
