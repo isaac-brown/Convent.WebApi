@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "standard-version"
+    "release": "standard-version",
+    "build:docker": "docker build . -t convent-web-api",
+    "start:docker": "npm run build:docker && docker run -p 8080:80 convent-web-api"
   },
   "repository": {
     "type": "git",
