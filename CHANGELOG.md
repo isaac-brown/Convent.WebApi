@@ -2,8 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.2-delete-me.2](https://github.com/isaac-brown/Convent.WebApi/compare/v0.0.2-delete-me.1...v0.0.2-delete-me.2) (2021-04-11)
-
 ### [0.0.2-delete-me.1](https://github.com/isaac-brown/Convent.WebApi/compare/v0.0.2-delete-me.0...v0.0.2-delete-me.1) (2021-04-11)
 
 ### 0.0.2-delete-me.0 (2021-04-11)
