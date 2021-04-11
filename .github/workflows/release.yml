@@ -24,13 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Login to Heroku Container registry
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:login
-      - name: Publish NuGet package
+      - name: Publish and release to Heroku
         shell: pwsh
         env:
-          NUGET_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
-          .\eng\release.ps1 -ApiKey $env:HEROKU_API_KEY
+          .\eng\release.ps1
