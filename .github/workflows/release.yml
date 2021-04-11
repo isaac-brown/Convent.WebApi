@@ -2,8 +2,6 @@
 
 name: Release to Heroku
 
-name: Publishes package to NuGet
-
 on:
   # Only when new version tags are pushed
   push:
@@ -27,9 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Login to Heroku Container registry
-        env: 
+        env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:login 
+        run: heroku container:login
       - name: Publish NuGet package
         shell: pwsh
         env:
