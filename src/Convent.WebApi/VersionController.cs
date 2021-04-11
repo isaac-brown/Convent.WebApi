@@ -5,6 +5,7 @@
 namespace Convent.WebApi
 {
     using System;
+    using System.Reflection;
     using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
@@ -12,6 +13,20 @@ namespace Convent.WebApi
     /// </summary>
     public class VersionController : ControllerBase
     {
+        private readonly VersionResponse versionResponse;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VersionController"/> class.
+        /// </summary>
+        public VersionController()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var version = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()!.InformationalVersion;
+            string dotnetVersion = Environment.Version.ToString();
+
+            this.versionResponse = new VersionResponse(applicationVersion: version, dotnetVersion: dotnetVersion);
+        }
+
         /// <summary>
         /// Gets version information.
         /// </summary>
@@ -20,10 +35,7 @@ namespace Convent.WebApi
         [HttpGet]
         public ActionResult<VersionResponse> GetVersion()
         {
-            string version = this.GetType().Assembly.GetName().Version!.ToString();
-            string dotnetVersion = Environment.Version.ToString();
-
-            return new VersionResponse(applicationVersion: version, dotnetVersion: dotnetVersion);
+            return this.versionResponse;
         }
     }
 }
