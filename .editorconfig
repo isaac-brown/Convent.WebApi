@@ -19,3 +19,10 @@ insert_final_newline = true
 csharp_using_directive_placement = inside_namespace
 dotnet_style_qualification_for_field = true
 
+# =============
+# YAML options
+# =============
+
+[*.yml]
+indent_style = space
+indent_size = 2
