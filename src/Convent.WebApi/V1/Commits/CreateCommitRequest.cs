@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 
-namespace Convent.WebApi.Commits
+namespace Convent.WebApi.V1.Commits
 {
     using Convent.Commits;
 
